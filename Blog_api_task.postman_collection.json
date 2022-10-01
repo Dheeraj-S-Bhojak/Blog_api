@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "13f0c186-c27b-4a48-8823-090b62238702",
+		"name": "Blog_api_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Get All User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"123456\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jane Doe\",\r\n    \"email\": \"jane2@example.com\",\r\n    \"password\": \"123456\",\r\n    \"imageUrl\":\r\n      \"https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/User_icon-cp.svg/1200px-User_icon-cp.svg.png\",\r\n    \"bio\": \"hello my name is Jane Doe\",\r\n    \"role\": [\"Reviewer\"]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/user/6338010abd1db8f2ed451e22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"user",
+								"6338010abd1db8f2ed451e22"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "GetAll posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get post by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/post/6338010abd1db8f2ed451e28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"post",
+								"6338010abd1db8f2ed451e28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "permanent delete post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/post/6338010abd1db8f2ed451e27",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"post",
+								"6338010abd1db8f2ed451e27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzZhODJiZDViOGY3MGE1ODhjMjg2NyIsImlhdCI6MTY2NDYwNzIzMywiZXhwIjoxNjY0ODY2NDMzfQ.Zsp9Bpqb1_R-M27cXhIb2_aeXLDLPg3z4JCnXK1JaGU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Ad, neque fugiat reiciendis recusandae corrupti quaerat ipsam?\",\r\n    \"content\":\r\n      \"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam natus eos deserunt odit nihil! Ad, neque fugiat reiciendis recusandae corrupti quaerat ipsam? Odit delectus est dolores dolore sed aspernatur quae nostrum, ipsum laborum veritatis rerum velit earum ducimus voluptatum suscipit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam natus eos deserunt odit nihil! Ad, neque fugiat reiciendis recusandae corrupti quaerat ipsam? Odit delectus est dolores dolore sed aspernatur quae nostrum, ipsum laborum veritatis rerum velit earum ducimus voluptatum suscipit?\",\r\n\r\n    \"slug\": \"lorem-ipsum-dolor-sit-amet-molestiae-itaque-iusto-deleniti-quia-error\",\r\n\r\n    \"status\": [\"DRAFT\"],\r\n\r\n    \"imageUrl\": [\r\n      \"https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg\"\r\n    ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \r\n            \"title\": \"Ad, neque fugiat reiciendis recusandae corrupti quaerat ipsam?\",\r\n            \"content\": \"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam natus eos deserunt odit nihil! Ad, neque fugiat reiciendis recusandae corrupti quaerat ipsam? Odit delectus est dolores dolore sed aspernatur quae nostrum, ipsum laborum veritatis rerum velit earum ducimus voluptatum suscipit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam natus eos deserunt odit nihil! Ad, neque fugiat reicimgnbfdnbvfendis recusandae corrupti quaerat ipsam? Odit delectus est dolores dolore sed aspernatur quae nostrum, ipsum laborum veritatis rerum velit earum ducimus voluptatum suscipit?\",\r\n            \r\n            \r\n            \"slug\": \"lorem-ipsum-dolor-sit-amet-molestiae-itaque-iusto-deleniti-quia-error\",\r\n            \"status\": [\r\n                \"PUBLISH\"\r\n            ]\r\n            \r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/post/6338010abd1db8f2ed451e29",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"post",
+								"6338010abd1db8f2ed451e29"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Get All Comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comment By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/comment/6338010abd1db8f2ed451e2d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"comment",
+								"6338010abd1db8f2ed451e2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permanent Delete Comments",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/comment/6338010abd1db8f2ed451e2d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"comment",
+								"6338010abd1db8f2ed451e2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SoftDelete Commments",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/comment/6338010abd1db8f2ed451e2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"comment",
+								"6338010abd1db8f2ed451e2c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create New Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzgwMTBhYmQxZGI4ZjJlZDQ1MWUyMyIsImlhdCI6MTY2NDYyMjQ2NywiZXhwIjoxNjY0ODgxNjY3fQ.TXiWu3HzTdKogB4vpbWXPSN8TOR4VRDLgwvZ3HKwydM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"content\": \"Ad64511, neque fugiat reiciendis recusandae corrupti quaerat ipsam\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/comment/6338010abd1db8f2ed451e2b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"comment",
+								"6338010abd1db8f2ed451e2b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
